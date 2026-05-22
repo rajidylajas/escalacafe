@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escala Café — A Pausa Perfeita Entre Destinos</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Cursor personalizado -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-logo">ESCALA</div>
+    <div class="loader-bar"></div>
+  </div>
+
+  <!-- MENU MOBILE -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" onclick="closeMobileMenu()">✕</button>
+    <a href="#home"      onclick="closeMobileMenu()">Home</a>
+    <a href="#menu"      onclick="closeMobileMenu()">Menu</a>
+    <a href="#galeria"   onclick="closeMobileMenu()">Galeria</a>
+    <a href="#contactos" onclick="closeMobileMenu()">Contactos</a>
+  </div>
+
+  <!-- NAVEGAÇÃO -->
+  <nav id="navbar">
+    <a href="#home" class="nav-logo">ESCALA</a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#contactos">Contactos</a></li>
+    </ul>
+    <div class="hamburger" onclick="openMobileMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero-bg">
+      <div class="hero-bg-pattern"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-logo-mark">
+        <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg">
+          <path d="M25 55 Q25 70 45 70 L75 70 Q95 70 95 55 L95 30 L25 30 Z" stroke-width="2.5" fill="none" stroke="currentColor"/>
+          <path d="M95 35 Q115 35 115 47 Q115 58 95 58" stroke-width="2.5" fill="none" stroke="currentColor"/>
+          <path d="M18 75 L102 75" stroke-width="2.5" stroke-linecap="round" stroke="currentColor"/>
+          <path d="M45 22 Q42 16 45 10 Q48 4 45 -2"  stroke-width="2" fill="none" stroke-linecap="round" stroke="currentColor" opacity="0.7"/>
+          <path d="M60 20 Q57 14 60 8 Q63 2 60 -4"   stroke-width="2" fill="none" stroke-linecap="round" stroke="currentColor" opacity="0.7"/>
+          <path d="M75 22 Q72 16 75 10 Q78 4 75 -2"  stroke-width="2" fill="none" stroke-linecap="round" stroke="currentColor" opacity="0.7"/>
+        </svg>
+      </div>
+      <h1 class="hero-title">ESCALA</h1>
+      <p class="hero-subtitle">Café</p>
+      <p class="hero-slogan">"A pausa perfeita entre destinos."</p>
+    </div>
+    <div class="hero-scroll" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+      <span>Descobrir</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <div id="about" class="about-strip">
+    <div class="about-text-block reveal">
+      <span class="about-detail">Aeroporto Internacional</span>
+      <h2>Um momento seu,<br>antes do próximo voo.</h2>
+      <p>No coração do aeroporto, o Escala Café é o lugar onde o tempo abranda. Café de especialidade, pastelaria artesanal e refeições leves pensadas para quem viaja — com o refinamento e o conforto que merece.</p>
+      <div class="about-stats">
+        <div class="stat reveal reveal-delay-1"><h3>07</h3><p>Dias por semana</p></div>
+        <div class="stat reveal reveal-delay-2"><h3>24</h3><p>Horas abertas</p></div>
+        <div class="stat reveal reveal-delay-3"><h3>3</h3><p>Terminais</p></div>
+      </div>
+    </div>
+    <div class="about-image-grid reveal">
+      <div class="about-img"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80" alt="Café espresso"></div>
+      <div class="about-img"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=300&q=80" alt="Croissant"></div>
+      <div class="about-img"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=300&q=80" alt="Café ambiente"></div>
+    </div>
+  </div>
+
+  <!-- MENU -->
+  <section id="menu">
+    <div class="section-header">
+      <span class="section-tag">O nosso menu</span>
+      <h2 class="section-title">Sabores de eleição</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="menu-tabs">
+      <button class="menu-tab active" onclick="showMenu('cafes')">Cafés</button>
+      <button class="menu-tab" onclick="showMenu('pastelaria')">Pastelaria</button>
+      <button class="menu-tab" onclick="showMenu('refeicoes')">Refeições</button>
+      <button class="menu-tab" onclick="showMenu('bebidas')">Bebidas</button>
+    </div>
+    <!-- Cafés -->
+    <div class="menu-grid active" id="menu-cafes">
+      <div class="menu-item reveal"><span class="menu-badge">Clássico</span><div class="menu-item-header"><h3>Espresso</h3><span class="menu-price">2,50€</span></div><p>Blend exclusivo de grãos de origem, torrado artesanalmente. Intenso, com notas de chocolate e frutos secos.</p></div>
+      <div class="menu-item reveal reveal-delay-1"><span class="menu-badge">Popular</span><div class="menu-item-header"><h3>Flat White</h3><span class="menu-price">3,80€</span></div><p>Duplo espresso com leite vaporizado sedoso. A escolha dos apreciadores de café que viajam pelo mundo.</p></div>
+      <div class="menu-item reveal reveal-delay-2"><span class="menu-badge">Premium</span><div class="menu-item-header"><h3>Cold Brew</h3><span class="menu-price">4,20€</span></div><p>Infusão a frio durante 18 horas. Suave, refrescante, com uma doçura natural sem amargor.</p></div>
+      <div class="menu-item reveal"><div class="menu-item-header"><h3>Cappuccino</h3><span class="menu-price">3,20€</span></div><p>Espresso, leite vaporizado e espuma cremosa em proporções perfeitas. Arte latte a pedido.</p></div>
+      <div class="menu-item reveal reveal-delay-1"><div class="menu-item-header"><h3>Café com Leite</h3><span class="menu-price">2,80€</span></div><p>O clássico português, preparado com o nosso blend exclusivo e leite orgânico.</p></div>
+      <div class="menu-item reveal reveal-delay-2"><span class="menu-badge">Novo</span><div class="menu-item-header"><h3>Iced Latte</h3><span class="menu-price">4,50€</span></div><p>Espresso sobre gelo com leite frio. Perfeito para embarques nos dias quentes.</p></div>
+    </div>
+    <!-- Pastelaria -->
+    <div class="menu-grid" id="menu-pastelaria">
+      <div class="menu-item reveal"><span class="menu-badge">Artesanal</span><div class="menu-item-header"><h3>Croissant de Manteiga</h3><span class="menu-price">3,50€</span></div><p>Preparado de madrugada, folhado e dourado. Crocante por fora, derretido por dentro.</p></div>
+      <div class="menu-item reveal reveal-delay-1"><span class="menu-badge">Favorito</span><div class="menu-item-header"><h3>Pastel de Nata</h3><span class="menu-price">2,20€</span></div><p>Receita tradicional portuguesa, com crème brûlée caramelizado e canela de Ceilão.</p></div>
+      <div class="menu-item reveal reveal-delay-2"><div class="menu-item-header"><h3>Tarte de Amêndoa</h3><span class="menu-price">4,80€</span></div><p>Base crocante de amêndoa, recheio de frangipane com toque de baunilha madagáscar.</p></div>
+      <div class="menu-item reveal"><div class="menu-item-header"><h3>Bolo de Chocolate</h3><span class="menu-price">4,20€</span></div><p>Chocolate negro 70%, húmido e intenso. Ganache de Valrhona no topo.</p></div>
+      <div class="menu-item reveal reveal-delay-1"><div class="menu-item-header"><h3>Pain au Chocolat</h3><span class="menu-price">3,80€</span></div><p>Folhado de manteiga com duas barras de chocolate negro. A escolha dos viajantes matinais.</p></div>
+      <div class="menu-item reveal reveal-delay-2"><span class="menu-badge">Novo</span><div class="menu-item-header"><h3>Cookie de Baunilha</h3><span class="menu-price">2,50€</span></div><p>Estaladiço nas bordas, macio no centro. Com pepitas de chocolate branco e sal marinho.</p></div>
+    </div>
+    <!-- Refeições -->
+    <div class="menu-grid" id="menu-refeicoes">
+      <div class="menu-item reveal"><span class="menu-badge">Chef</span><div class="menu-item-header"><h3>Tosta Mista Gourmet</h3><span class="menu-price">7,50€</span></div><p>Pão de fermentação lenta, queijo da Serra, presunto ibérico e mostarda de Dijon. Tomate confitado.</p></div>
+      <div class="menu-item reveal reveal-delay-1"><div class="menu-item-header"><h3>Bowl de Salada</h3><span class="menu-price">9,80€</span></div><p>Quinoa, abacate, tomate cherry, pepino, frango grelhado e vinagrete de limão e ervas.</p></div>
+      <div class="menu-item reveal reveal-delay-2"><div class="menu-item-header"><h3>Sopa do Dia</h3><span class="menu-price">5,50€</span></div><p>Preparada diariamente pelo nosso chef com ingredientes frescos e sazonais.</p></div>
+      <div class="menu-item reveal"><div class="menu-item-header"><h3>Wrap de Salmão</h3><span class="menu-price">8,90€</span></div><p>Salmão fumado, cream cheese, rúcula, alcaparras e limão numa tortilha de espinafres.</p></div>
+      <div class="menu-item reveal reveal-delay-1"><span class="menu-badge">Veg</span><div class="menu-item-header"><h3>Avocado Toast</h3><span class="menu-price">8,50€</span></div><p>Pão de centeio, abacate esmagado, ovo escalfado, sementes de sésamo e piri-piri.</p></div>
+      <div class="menu-item reveal reveal-delay-2"><div class="menu-item-header"><h3>Plato Ibérico</h3><span class="menu-price">12,50€</span></div><p>Seleção de enchidos ibéricos, queijos curados, frutos secos e pão artesanal tostado.</p></div>
+    </div>
+    <!-- Bebidas -->
+    <div class="menu-grid" id="menu-bebidas">
+      <div class="menu-item reveal"><div class="menu-item-header"><h3>Chá Verde Sencha</h3><span class="menu-price">3,20€</span></div><p>Folhas de chá verde japonês, suave e herbáceo. Servido a 75°C para preservar os aromas.</p></div>
+      <div class="menu-item reveal reveal-delay-1"><div class="menu-item-header"><h3>Sumo Natural</h3><span class="menu-price">4,50€</span></div><p>Laranja espremida no momento. Opções: laranja, melancia, maçã e gengibre, ou cenoura.</p></div>
+      <div class="menu-item reveal reveal-delay-2"><span class="menu-badge">Exclusivo</span><div class="menu-item-header"><h3>Escala Signature</h3><span class="menu-price">5,80€</span></div><p>Leite de aveia, matcha, gengibre e mel de acácia. Fresco e energizante.</p></div>
+      <div class="menu-item reveal"><div class="menu-item-header"><h3>Limonada de Hortelã</h3><span class="menu-price">3,90€</span></div><p>Limão espremido, hortelã fresca, água com gás e açúcar de cana.</p></div>
+      <div class="menu-item reveal reveal-delay-1"><div class="menu-item-header"><h3>Água com Gás</h3><span class="menu-price">2,00€</span></div><p>S. Pellegrino 500ml. Acompanha qualquer refeição com uma elegância descomplicada.</p></div>
+      <div class="menu-item reveal reveal-delay-2"><div class="menu-item-header"><h3>Chocolate Quente</h3><span class="menu-price">4,20€</span></div><p>Valrhona 65% com leite integral. Espesso, aveludado, com nata fresca batida na hora.</p></div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria">
+    <div class="section-header reveal">
+      <span class="section-tag">Momentos no Escala</span>
+      <h2 class="section-title">Galeria</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="gallery-track-wrapper">
+      <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400&h=500&fit=crop&q=80" alt="Café"><div class="gallery-item-overlay"><span>Espresso perfeito</span></div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&h=500&fit=crop&q=80" alt="Croissant"><div class="gallery-item-overlay"><span>Pastelaria artesanal</span></div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=400&h=500&fit=crop&q=80" alt="Interior"><div class="gallery-item-overlay"><span>Ambiente acolhedor</span></div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&h=500&fit=crop&q=80" alt="Iced coffee"><div class="gallery-item-overlay"><span>Cold brew de verão</span></div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=500&fit=crop&q=80" alt="Bolo"><div class="gallery-item-overlay"><span>Bolos de eleição</span></div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?w=400&h=500&fit=crop&q=80" alt="Café interior"><div class="gallery-item-overlay"><span>A nossa sala</span></div></div>
+        <!-- Duplicados para scroll infinito -->
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400&h=500&fit=crop&q=80" alt="Café"><div class="gallery-item-overlay"><span>Espresso perfeito</span></div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&h=500&fit=crop&q=80" alt="Croissant"><div class="gallery-item-overlay"><span>Pastelaria artesanal</span></div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=400&h=500&fit=crop&q=80" alt="Interior"><div class="gallery-item-overlay"><span>Ambiente acolhedor</span></div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&h=500&fit=crop&q=80" alt="Iced coffee"><div class="gallery-item-overlay"><span>Cold brew de verão</span></div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=500&fit=crop&q=80" alt="Bolo"><div class="gallery-item-overlay"><span>Bolos de eleição</span></div></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?w=400&h=500&fit=crop&q=80" alt="Café interior"><div class="gallery-item-overlay"><span>A nossa sala</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTOS -->
+  <section id="contactos">
+    <div class="contact-left">
+      <span class="about-detail reveal">Fale connosco</span>
+      <h2 class="reveal">Estamos<br>aqui para si.</h2>
+      <p class="reveal">Reservas, encomendas especiais ou simplesmente para dizer olá. A nossa equipa tem todo o gosto em recebê-lo.</p>
+      <div class="contact-info-item reveal">
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+        <div class="contact-info-text"><strong>Localização</strong><span>Aeroporto Internacional de Luanda<br>Terminal 1 — Piso 2, Área de Embarque</span></div>
+      </div>
+      <div class="contact-info-item reveal">
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="10"/></svg></div>
+        <div class="contact-info-text"><strong>Horário</strong><span>Todos os dias — 24 horas</span></div>
+      </div>
+      <div class="contact-info-item reveal">
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg></div>
+        <div class="contact-info-text"><strong>Contacto</strong><span>+244 923 000 000<br>info@escalacafe.ao</span></div>
+      </div>
+    </div>
+    <div class="contact-right reveal">
+      <div class="contact-form">
+        <div class="form-group"><input type="text" id="name" placeholder="Nome" autocomplete="off"><label for="name">Nome</label></div>
+        <div class="form-group"><input type="email" id="email" placeholder="Email" autocomplete="off"><label for="email">Email</label></div>
+        <div class="form-group"><input type="text" id="subject" placeholder="Assunto" autocomplete="off"><label for="subject">Assunto</label></div>
+        <div class="form-group"><textarea id="message" placeholder="Mensagem"></textarea><label for="message">Mensagem</label></div>
+        <button class="btn-submit" onclick="submitForm()">
+          <span>Enviar mensagem</span>
+          <svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">ESCALA CAFÉ</div>
+    <div class="footer-slogan">"A pausa perfeita entre destinos."</div>
+    <div class="footer-copy">© 2025 Escala Café — Todos os direitos reservados</div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="main.js"></script>
+
+</body>
+</html>
