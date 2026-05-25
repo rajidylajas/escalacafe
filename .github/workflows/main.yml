@@ -1,4 +1,4 @@
 - name: 'notify vercel'
   uses: 'vercel/repository-dispatch/actions/status@v1'
   with:
-    name: Vercel - escalacafe: lint
+    name: Vercel - escalacafe: lajas
